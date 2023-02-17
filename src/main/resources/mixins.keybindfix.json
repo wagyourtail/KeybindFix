@@ -1,0 +1,10 @@
+{
+    "required": true,
+    "minVersion": "0.7.11",
+    "package": "xyz.wagyourtail.keybindfix.mixins",
+    "refmap": "mixins.keybindfix.refmap.json",
+    "compatibilityLevel": "JAVA_8",
+    "client": [
+        "KeyBindingMixin"
+    ]
+}

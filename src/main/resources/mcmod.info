@@ -1,0 +1,15 @@
+[
+    {
+        "modid": "keybindfix",
+        "name": "Keybind Fix",
+        "version": "1.0.0",
+        "mcversion": "1.7.10",
+        "description": "Backports KeybindFix to 1.7.10",
+        "url": "https://github.com/wagyourtail/KeybindFix",
+        "authorList": [
+            "wagyourtail",
+            "fzzyhmstrs"
+        ],
+        "dependencies": ["gtnhmixins"]
+    }
+]

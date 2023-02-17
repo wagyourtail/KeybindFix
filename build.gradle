@@ -1,19 +1,61 @@
 plugins {
     id 'java'
+    id 'xyz.wagyourtail.unimined' version '0.4.0'
 }
 
-group 'xyz.wagyourtail'
-version '1.0-SNAPSHOT'
+group project.maven_group
+version project.mod_version
+
+archivesBaseName = project.archives_base_name
+
+minecraft {
+    forge  {
+        accessTransformer = file("src/main/resources/META-INF/keybindfix_at.cfg")
+        mixinConfig = ["mixins.keybindfix.json"]
+        mcpVersion = project.mcp_version
+        mcpChannel = project.mcp_channel
+    }
+
+    mcRemapper.tinyRemapperConf = {
+        ignoreFieldDesc(true)
+        ignoreConflicts(true)
+    }
+
+    launches.setConfig("client") {
+        args.addAll([
+            // for some reason, dev launch is broken with gtnhmixins...
+//            "--tweakClass", "org.spongepowered.asm.launch.MixinTweaker"
+        ])
+    }
+}
 
 repositories {
+    maven {
+        name "GTNH Maven"
+        url "http://jenkins.usrv.eu:8081/nexus/content/groups/public/"
+        allowInsecureProtocol = true
+        metadataSources {
+            artifact()
+        }
+    }
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    minecraft "net.minecraft:minecraft:${project.minecraft_version}"
+
+    forge "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
+
+    // mappings supplied by forge in this version
+
+    implementation "com.gtnewhorizon:gtnhmixins:2.1.12"
 }
 
-test {
-    useJUnitPlatform()
+jar {
+    manifest {
+        attributes([
+                "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+                "FMLAT": "keybindfix_at.cfg"
+        ])
+    }
 }

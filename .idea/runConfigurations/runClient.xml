@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name=": Minecraft Client" factoryName="Application" type="Application">
+        <option name="ALTERNATIVE_JRE_PATH" value="1"></option>
+        <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false"></option>
+        <envs></envs>
+        <option name="MAIN_CLASS_NAME" value="net.minecraft.launchwrapper.Launch"></option>
+        <module name="KeybindFix.main"></module>
+        <option name="PROGRAM_PARAMETERS" value="--username Dev --version 1.7.10 --gameDir /home/william/Documents/Projects/SprintControl/run/client --assetsDir /home/william/.gradle/caches/unimined/assets --assetIndex 1.7.10 --accessToken 0 --userProperties {} --userType msa --tweakClass cpw.mods.fml.common.launcher.FMLTweaker -mixin.config mixins.keybindfix.json"></option>
+        <option name="VM_PARAMETERS" value="-Xmx2G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M -Djava.library.path=/home/william/Documents/Projects/SprintControl/run/client/natives -Dminecraft.launcher.brand=UniminedDev -Dminecraft.launcher.version=1.0.0 -Dfml.ignoreInvalidMinecraftCertificates=true -Dfml.deobfuscatedEnvironment=true -Dnet.minecraftforge.gradle.GradleStart.srg.srg-mcp=/home/william/Documents/Projects/SprintControl/build/unimined/mappings/srg2mcp.srg"></option>
+        <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run/client"></option>
+        <method v="2">
+            <option name="Make" enabled="true"></option>
+            <option scriptParameters="" name="Gradle.BeforeRunTask" externalProjectPath="$PROJECT_DIR$/" vmOptions="" enabled="true" tasks="preRunClient"></option>
+        </method>
+    </configuration>
+</component>
